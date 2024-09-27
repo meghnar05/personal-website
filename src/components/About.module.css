@@ -1,0 +1,71 @@
+.aboutContainer {
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    padding: 20px 50px 50px 20px; /* Reduce top padding to move everything up */
+    background-color: #5c82a1;
+    min-height: 100vh;
+    color: #ffffff; /* Default text color */
+  }
+  
+  .contentWrapper {
+    display: flex;
+    align-items: center; /* Align the image and text vertically */
+    gap: 40px; /* Space between the image and the text */
+    max-width: 900px; /* Adjust this value to control how far the content stretches */
+    margin-top: -200px; /* Optional: negative margin to move content further up */
+  }
+  
+  .imageContainer {
+    flex-shrink: 0; /* Prevent the image from shrinking */
+  }
+  
+  .profileImage {
+    border-radius: 0%; /* Make the image circular */
+    object-fit: cover;
+  }
+  
+  .textContainer {
+    flex: 1; /* Allow the text container to take the remaining space */
+  }
+  
+  .title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-align: left; /* Align text to the left */
+    background: linear-gradient(90deg, #0b3971, #d03090); /* Blue to purple gradient */
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent; /* Make text transparent to show gradient */
+    font-weight: bold;
+  }
+  
+  .rotatingWords {
+    font-size: 1.8rem;
+    color: #ffffff;
+    text-align: left; /* Align text to the left */
+  }
+  
+  .fadeWord {
+    font-weight: bold;
+    color: #ffd700; /* Highlight color for rotating words */
+    animation: fadeInOut 4s ease-in-out infinite;
+  }
+  
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0; /* Start invisible */
+    }
+    20% {
+      opacity: 1; /* Fade in */
+    }
+    50% {
+      opacity: 1; /* Stay visible */
+    }
+    70% {
+      opacity: 0; /* Fade out */
+    }
+    100% {
+      opacity: 0; /* Invisible again */
+    }
+  }
+  
