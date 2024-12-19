@@ -37,7 +37,7 @@ const projects = [
     description: "A mobile app for readers to connect, discuss, and track progresses.",
     github: null,
     website: null,
-    demo: "https://www.figma.com/design/euFPaR0jaXgL7tY0nmV1V1/readr---public?node-id=108-382&t=kjlpKyUGfATJpgON-1",
+    demo: "https://www.figma.com/proto/euFPaR0jaXgL7tY0nmV1V1/readr---public?node-id=2-2&t=en1AW0lKiP8PEbcA-1",
   },
 ];
 
