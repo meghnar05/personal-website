@@ -1,0 +1,104 @@
+.experiencesSection {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #5c82a1;
+    color: #ffffff;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  .tileContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  .tile {
+    width: 350px;
+    height: 450px; /* Increased height for new content */
+    perspective: 1000px; /* Enables the 3D effect */
+  }
+  
+  .tileInner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+  
+  .tile:hover .tileInner {
+    transform: rotateY(180deg); /* Flips the tile */
+  }
+  
+  .tileFront,
+  .tileBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hides the back when the front is visible */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .tileFront {
+    background-color: #0b3971; /* Front tile color */
+    color: white;
+  }
+  
+  .tileBack {
+    background-color: #0b3971; /* Back tile color */
+    color: #ffffff;
+    transform: rotateY(180deg); /* Ensures it's hidden initially */
+  }
+  
+  .companyHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo and name */
+    margin-bottom: 10px;
+  }
+  
+  .companyLogo {
+    border-radius: 5px; /* Slightly rounded corners */
+  }
+  
+  .companyName {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .position {
+    font-size: 1rem;
+    font-style: italic;
+    margin: 10px 0;
+  }
+  
+  .details {
+    margin-top: 10px;
+  }
+  
+  .detailItem {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    margin: 5px 0;
+  }
+  
+  .icon {
+    font-size: 1.2rem;
+    color: white;
+  }
+  

@@ -1,21 +1,25 @@
 .aboutContainer {
   display: flex;
+  flex-direction: column; /* Stack content vertically */
   justify-content: center;
   align-items: center;
   background-color: #5c82a1;
-  min-height: 100vh; /* Full height of the viewport */
   width: 100%;
   color: #ffffff;
-  padding-top: 0; /* Remove default padding to start content higher */
+  padding: 50px 20px; /* Space around content */
+  height: auto; /* Allow the container to grow dynamically with content */
+  margin-top: -20px; /* Move the container up slightly */
 }
 
 .contentWrapper {
   display: flex;
   flex-direction: column; /* Stack text vertically */
-  align-items: center; /* Center-align the text */
-  text-align: center; /* Align text to the center */
-  transform: translateY(-350px); /* Move the content up by 50px */
+  align-items: center;
+  text-align: center;
+  gap: 20px; /* Space between the name and adjectives */
+  margin-top: -50px; /* Move the content up */
 }
+
 
 .textContainer {
   display: flex;

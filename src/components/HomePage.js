@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './HomePage.module.css';
 
-const About = () => {
+const HomePage = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [typing, setTyping] = useState(true); // Determines if typing or erasing
@@ -60,4 +60,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default HomePage;
