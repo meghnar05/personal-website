@@ -1,7 +1,7 @@
 .projectsSection {
     padding: 50px 20px;
     text-align: center;
-    background-color: #ffffff;
+    background-color: #5c82a1;
     color: #333;
   }
   
@@ -22,7 +22,7 @@
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 10px;
-    background-color: #5c82a1;
+    background-color: #0b3971;
     color: white;
     text-align: center;
     transition: transform 0.3s ease, background-color 0.3s ease;
@@ -31,7 +31,7 @@
   
   .tile:hover {
     transform: scale(1.05); /* Slightly increase the size on hover */
-    background-color: #ffd700; /* Change background color on hover */
+    background-color: #0b3971; /* Change background color on hover */
   }
   
   .banner {
@@ -62,16 +62,16 @@
   
   .link {
     font-size: 0.9rem;
-    color: white;
+    color: black;
     text-decoration: none;
-    background-color: #333;
+    background-color: #ffffff;
     padding: 5px 10px;
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
   
   .link:hover {
-    background-color: #ffd700;
+    background-color: #5c82a1;
     color: black;
   }
   

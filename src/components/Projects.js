@@ -25,26 +25,26 @@ const projects = [
     id: 3,
     logo: "/assets/ProfitPeak.png",
     name: "ProfitPeak",
-    description: "A machine learning model for predicting stock prices.",
+    description: "A price recommendation service for small business owners to maximize profits based on cost of inputs and desired profit margins.",
     github: "https://github.com/meghnar05/profitpeak",
     website: null,
     demo: "https://devpost.com/software/profitpeak",
   },
   {
     id: 4,
-    logo: "/assets/project3-logo.png",
-    name: "ProfitPeak",
-    description: "A machine learning model for predicting stock prices.",
-    github: "https://github.com/meghnar05/profitpeak",
+    logo: "/assets/readr.png",
+    name: "readr",
+    description: "A mobile app for readers to connect, discuss, and track progresses.",
+    github: null,
     website: null,
-    demo: "https://devpost.com/software/profitpeak",
+    demo: "https://www.figma.com/design/euFPaR0jaXgL7tY0nmV1V1/readr---public?node-id=108-382&t=kjlpKyUGfATJpgON-1",
   },
 ];
 
 const Projects = () => {
   return (
     <section className={styles.projectsSection}>
-      <h2 className={styles.sectionTitle}>My Projects</h2>
+      <h2 className={styles.sectionTitle}>Projects</h2>
       <div className={styles.tileContainer}>
         {projects.map((project) => (
           <div key={project.id} className={styles.tile}>
