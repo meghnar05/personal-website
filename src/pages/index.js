@@ -7,7 +7,7 @@ import Projects from "@/components/Projects";
 export default function Home() {
   return (
     <main>
-      <Navbar />
+      {/* <Navbar /> */}
       {/* Add id to each section for navigation */}
       <section id="home">
         <HomePage />

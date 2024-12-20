@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import styles from "./HomePage.module.css";
-import { FaLinkedin, FaGithub, FaEnvelope, FaFileAlt } from "react-icons/fa"; // Import icons
+import { FaLinkedin, FaGithub, FaEnvelope, FaFileAlt } from "react-icons/fa";
 
 const HomePage = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -66,6 +66,16 @@ const HomePage = () => {
         />
       </div>
 
+      {/* Navbar */}
+      <div className={styles.navbar}>
+        <img src="/assets/navLogo.png" alt="Logo" className={styles.navLogo} />
+        <div className={styles.navLinks}>
+          <a href="#about">About</a>
+          <a href="#experience">Experiences</a>
+          <a href="#projects">Projects</a>
+        </div>
+      </div>
+
       {/* Main Content */}
       <div className={styles.contentWrapper}>
         <div className={styles.textContainer}>
@@ -75,43 +85,43 @@ const HomePage = () => {
             <span className={styles.cursor}></span>
           </h2>
         </div>
-      </div>
 
-      {/* Footer with Social Icons */}
-      <footer className={styles.footer}>
-        <a
-          href="https://linkedin.com/in/reddymeghna"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.icon}
-        >
-          <FaLinkedin />
-        </a>
-        <a
-          href="https://github.com/meghnar05"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.icon}
-        >
-          <FaGithub />
-        </a>
-        <a
-          href="mailto:meghnar@umich.edu"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.icon}
-        >
-          <FaEnvelope />
-        </a>
-        <a
-          href="/resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.icon}
-        >
-          <FaFileAlt />
-        </a>
-      </footer>
+        {/* Icons Section */}
+        <div className={styles.iconWrapper}>
+          <a
+            href="https://linkedin.com/in/reddymeghna"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.icon}
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://github.com/meghnar05"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.icon}
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="mailto:meghnar@umich.edu"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.icon}
+          >
+            <FaEnvelope />
+          </a>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.icon}
+          >
+            <FaFileAlt />
+          </a>
+        </div>
+      </div>
     </div>
   );
 };
