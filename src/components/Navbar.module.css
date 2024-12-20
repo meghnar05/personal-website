@@ -1,28 +1,43 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #5c82a1;
-  }
-  
-  .logo img {
-    width: 100px;
-  }
-  
-  .navLinks {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .navLinks li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .navLinks li a:hover {
-    color: #052845;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #5c82a1;
+}
+
+.logo img {
+  width: 100px;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navLinks li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative; /* Needed for positioning the line */
+}
+
+.navLinks li a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px; /* Position the underline just below the text */
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #052845; /* Underline color */
+  transition: width 0.3s ease; /* Smooth animation */
+}
+
+.navLinks li a:hover {
+  color: #052845; /* Change text color on hover */
+}
+
+.navLinks li a:hover::after {
+  width: 100%; /* Expand the underline on hover */
+}

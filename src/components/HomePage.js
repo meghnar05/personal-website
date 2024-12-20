@@ -6,7 +6,7 @@ const HomePage = () => {
   const [displayedText, setDisplayedText] = useState("");
   const [typing, setTyping] = useState(true); // Determines if typing or erasing
 
-  const rotatingWords = ["Software Engineer", "Designer", "Tech Enthusiast", "Problem Solver"];
+  const rotatingWords = ["Software Engineer", "Designer", "Michigan Wolverine", "Pianist", "Problem Solver", "Builder", "Taekwondo Black Belt", "Entrepreneur", "Competitive Athlete"];
 
   useEffect(() => {
     let typingInterval;
@@ -20,7 +20,7 @@ const HomePage = () => {
             return currentWord.slice(0, prev.length + 1); // Add next character
           } else {
             clearInterval(typingInterval);
-            setTimeout(() => setTyping(false), 1000); // Pause for 2 seconds after typing the word
+            setTimeout(() => setTyping(false), 1500); // Pause for 2 seconds after typing the word
             return prev;
           }
         });

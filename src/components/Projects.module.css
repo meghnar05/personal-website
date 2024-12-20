@@ -1,24 +1,26 @@
 .projectsSection {
     padding: 50px 20px;
     text-align: center;
-    background-color: #5c82a1;
-    color: #333;
+    background-color: #5c82a1; /* Section background color */
+    color: white; /* White text for readability */
   }
   
   .sectionTitle {
     font-size: 2rem;
     margin-bottom: 40px;
+    color: #ffffff;
   }
   
   .tileContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ensure consistent tile width */
     gap: 20px;
     justify-items: center;
   }
   
   .tile {
     width: 300px;
+    height: 450px; /* Fixed height to ensure uniform tiles */
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -26,12 +28,15 @@
     color: white;
     text-align: center;
     transition: transform 0.3s ease, background-color 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute content evenly */
   }
   
   .tile:hover {
-    transform: scale(1.05); /* Slightly increase the size on hover */
-    background-color: #0b3971; /* Change background color on hover */
+    transform: scale(1.10);
+    background-color: #0b3971;
   }
   
   .banner {
@@ -40,6 +45,7 @@
   
   .projectLogo {
     object-fit: contain;
+    max-height: 50px;
   }
   
   .projectName {
@@ -58,6 +64,7 @@
     display: flex;
     justify-content: center;
     gap: 10px;
+    margin-bottom: 10px; /* Ensure uniform spacing above skills section */
   }
   
   .link {
@@ -72,6 +79,69 @@
   
   .link:hover {
     background-color: #5c82a1;
-    color: black;
+    color: white;
+  }
+  
+  .skills {
+    text-align: left; /* Align skills list to the left */
+    margin-top: 10px;
+  }
+  
+  .skillsTitle {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .skillsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .skillItem {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+  
+  .banner {
+    display: flex;
+    align-items: center; /* Vertically align logo and name */
+    justify-content: center; /* Center align the whole section */
+    gap: 10px; /* Add spacing between the logo and the name */
+    margin-bottom: 10px;
+  }
+  
+  .projectLogo {
+    object-fit: contain;
+    max-height: 80px;
+    width: 80px; /* Fixed width to keep the logo size consistent */
+  }
+  
+  .projectName {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0; /* Remove extra margins for alignment */
+    text-align: left; /* Align text to the left for better visual flow */
+  }
+
+  .skillsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Display skills inline */
+    justify-content: center; /* Center align skills */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    gap: 5px; /* Spacing between skills */
+  }
+  
+  .skillItem {
+    font-size: 0.9rem;
+  }
+  
+  .skillItem:not(:last-child)::after {
+    content: " | "; /* Add a pipe separator after each skill except the last */
+    color: white; /* Match separator color with text color */
   }
   
