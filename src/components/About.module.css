@@ -49,13 +49,13 @@
   
   .icon {
     font-size: 2rem; /* Size of the icons */
-    color: #000000; /* Default icon color */
+    color: #0b3971; /* Default icon color */
     transition: color 0.3s ease; /* Smooth color transition on hover */
     font-family: 'Poppins', sans-serif;
   }
   
   .icon:hover {
-    color: #d03090; /* Highlight color when hovered */
+    color: #ffffff; /* Highlight color when hovered */
     font-family: 'Poppins', sans-serif;
   }
   
