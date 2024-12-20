@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import styles from './HomePage.module.css';
+import React, { useState, useEffect } from "react";
+import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
+import styles from "./HomePage.module.css";
+import { FaLinkedin, FaGithub, FaEnvelope, FaFileAlt } from "react-icons/fa"; // Import icons
 
 const HomePage = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -54,6 +56,17 @@ const HomePage = () => {
 
   return (
     <div className={styles.aboutContainer}>
+      {/* Background Beams */}
+      <div className={styles.beamsWrapper}>
+        <BackgroundBeamsWithCollision
+          beamCount={30}
+          colors={["#FF5733", "#33FF57", "#3357FF"]}
+          collision={true}
+          speed={3}
+        />
+      </div>
+
+      {/* Main Content */}
       <div className={styles.contentWrapper}>
         <div className={styles.textContainer}>
           <h1 className={styles.title}>Meghna Reddy</h1>
@@ -63,6 +76,42 @@ const HomePage = () => {
           </h2>
         </div>
       </div>
+
+      {/* Footer with Social Icons */}
+      <footer className={styles.footer}>
+        <a
+          href="https://linkedin.com/in/reddymeghna"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.icon}
+        >
+          <FaLinkedin />
+        </a>
+        <a
+          href="https://github.com/meghnar05"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.icon}
+        >
+          <FaGithub />
+        </a>
+        <a
+          href="mailto:meghnar@umich.edu"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.icon}
+        >
+          <FaEnvelope />
+        </a>
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.icon}
+        >
+          <FaFileAlt />
+        </a>
+      </footer>
     </div>
   );
 };

@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #5c82a1;
+  background-color: #0a0a0a;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -33,13 +33,13 @@
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #052845; /* Underline color */
+  background-color: #5c82a1; /* Underline color */
   transition: width 0.3s ease; /* Smooth animation */
   font-family: 'Poppins', sans-serif;
 }
 
 .navLinks li a:hover {
-  color: #052845; /* Change text color on hover */
+  color: #5c82a1; /* Change text color on hover */
   font-family: 'Poppins', sans-serif;
 }
 

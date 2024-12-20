@@ -6,7 +6,7 @@
     padding: 50px 20px; /* Space around the section */
     gap: 40px; /* Space between the image and text */
     background-color: #5c82a1;
-    height: auto; /* Allow the container to grow dynamically with content */
+    min-height: 100vh;
     font-family: 'Poppins', sans-serif;
   }
   

@@ -4,6 +4,7 @@
     background-color: #5c82a1;
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
   }
   
   .sectionTitle {

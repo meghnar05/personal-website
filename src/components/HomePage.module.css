@@ -1,25 +1,32 @@
 .aboutContainer {
+  position: relative; /* Allow absolute positioning for child elements */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between; /* Ensure content is spaced evenly */
   align-items: center;
   width: 100%;
+  height: 100vh; /* Full height of the viewport */
   color: #ffffff;
-  padding: 50px 20px;
-  min-height: 100vh;
-  margin-top: -20px;
+  margin: 0; /* Remove margins */
   font-family: 'Poppins', sans-serif;
-  background-color: #5c82a1;
+  overflow: hidden; /* Prevent scrollbars from appearing */
+  background-color: transparent; /* Optional: Ensure beams take over background */
 }
 
+
+
 .contentWrapper {
+  position: relative; /* Layer content above beams */
+  z-index: 1; /* Keep above background beams */
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* Center content vertically */
   text-align: center;
-  gap: 20px;
-  margin-top: -50px;
+  gap: 20px; /* Add spacing between name and adjectives */
+  flex: 1; /* Allow it to grow and take up available space */
 }
+
 
 .textContainer {
   display: flex;
@@ -27,18 +34,19 @@
   gap: 10px;
 }
 
+
 .title {
-  font-size: 4rem;
+  font-size: 6rem;
   margin-bottom: 10px;
-  color: black;
+  color: #5c82a1;
   font-weight: bold;
   text-align: center;
   line-height: 1.2;
 }
 
 .rotatingWords {
-  font-size: 1.8rem;
-  color: #000000;
+  font-size: 2rem;
+  color: #5c82a1;
   font-weight: 500;
 }
 
@@ -55,7 +63,7 @@
   display: inline-block;
   width: 2px;
   height: 1.5rem;
-  background-color: #0b3971;
+  background-color: black;
   margin-left: 2px;
   animation: blink 1s step-start infinite;
 }
@@ -65,3 +73,46 @@
     opacity: 0;
   }
 }
+
+.beamsWrapper {
+  position: absolute; /* Cover the parent container */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Place it behind content */
+  pointer-events: none; /* This should ONLY be applied here to ensure the beams do not block content */
+  background-image: url('/background.png'); /* Example background */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Space between icons */
+  padding: 20px 0;
+  margin-top: auto;
+  width: 100%;
+  position: relative; /* Ensure it layers correctly */
+  bottom: 120px; /* Adjust position */
+  z-index: 10; /* Ensure it stays above the beams */
+}
+
+.icon {
+  font-size: 5rem;
+  color: #5c82a1; /* Icon color */
+  transition: color 0.3s ease;
+  z-index: 15; /* Ensure icons are clickable above everything */
+  pointer-events: auto; /* Enable interaction (default behavior) */
+}
+
+
+.icon:hover {
+  color: #0b3971; /* Change color on hover */
+}
+
+

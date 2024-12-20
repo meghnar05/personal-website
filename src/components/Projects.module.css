@@ -4,6 +4,7 @@
     background-color: #5c82a1; /* Section background color */
     color: white; /* White text for readability */
     font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
   }
   
   .sectionTitle {
