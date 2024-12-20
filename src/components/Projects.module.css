@@ -1,26 +1,34 @@
 .projectsSection {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: #5c82a1; /* Section background color */
-    color: white; /* White text for readability */
-    font-family: 'Poppins', sans-serif;
-    min-height: 100vh;
-  }
-  
-  .sectionTitle {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    color: #ffffff;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  .tileContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ensure consistent tile width */
-    gap: 20px;
-    justify-items: center;
-    font-family: 'Poppins', sans-serif;
-  }
+  display: flex;
+  flex-direction: column; /* Stack the title and tiles vertically */
+  align-items: center; /* Center-align title and tiles horizontally */
+  justify-content: center; /* Center content vertically */
+  padding: 50px 20px; /* Space around the section */
+  gap: 40px; /* Space between the title and the tiles */
+  background-color: #5c82a1; /* Section background color */
+  color: white; /* White text for readability */
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh; /* Ensure full-screen height */
+}
+
+.sectionTitle {
+  font-size: 2.5rem; /* Increase font size for better visibility */
+  font-weight: bold; /* Bold for emphasis */
+  color: #ffffff;
+  margin-bottom: 20px; /* Add space below the title */
+  text-align: center; /* Center-align the title text */
+  font-family: 'Poppins', sans-serif;
+}
+
+.tileContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ensure consistent tile width */
+  gap: 60px; /* Space between tiles */
+  justify-items: center; /* Center tiles within their grid cells */
+  font-family: 'Poppins', sans-serif;
+  grid-template-columns: repeat(4, 1fr); /* Always 4 tiles per row */
+}
+
   
   .tile {
     width: 300px;
@@ -28,7 +36,7 @@
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 10px;
-    background-color: #0b3971;
+    background-color: #336384;
     color: white;
     text-align: center;
     transition: transform 0.3s ease, background-color 0.3s ease;
@@ -41,7 +49,7 @@
   
   .tile:hover {
     transform: scale(1.10);
-    background-color: #0b3971;
+    background-color: #336384;
     font-family: 'Poppins', sans-serif;
   }
   

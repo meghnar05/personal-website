@@ -48,15 +48,34 @@
 }
 
 .navLinks a {
-  color: #5c82a1;
-  text-decoration: none;
+  color: #5c82a1; /* Link color */
+  text-decoration: none; /* Remove underline */
   font-weight: bold;
-  transition: color 0.3s ease;
+  position: relative; /* Required for the hover effect */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and size transition */
 }
 
 .navLinks a:hover {
-  color: #0b3971;
+  color: #336384; /* Change color on hover */
+  transform: scale(1.1); /* Slightly enlarge the text */
 }
+
+.navLinks a::after {
+  content: ""; /* Empty content for the underline */
+  position: absolute;
+  bottom: -5px; /* Position the line slightly below the text */
+  left: 0;
+  width: 0; /* Start with no width */
+  height: 2px; /* Line height */
+  background-color: #0b3971; /* Line color */
+  transition: width 0.3s ease; /* Smoothly animate width */
+}
+
+.navLinks a:hover::after {
+  width: 100%; /* Full width on hover */
+}
+
+
 
 .contentWrapper {
   position: relative;
@@ -91,7 +110,7 @@
 
 .fadeWord {
   font-weight: bold;
-  background: linear-gradient(90deg, #0b3971, #d03090);
+  background: linear-gradient(90deg, #336384, #d03090);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;

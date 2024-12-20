@@ -81,7 +81,7 @@ const HomePage = () => {
         <div className={styles.textContainer}>
           <h1 className={styles.title}>Meghna Reddy</h1>
           <h2 className={styles.rotatingWords}>
-            I am a <span className={styles.fadeWord}>{displayedText}</span>
+            <span className={styles.fadeWord}>{displayedText}</span>
             <span className={styles.cursor}></span>
           </h2>
         </div>

@@ -1,76 +1,67 @@
 .aboutSection {
     display: flex;
-    flex-direction: row; /* Keep image and text side by side */
-    align-items: center; /* Vertically align the image and text */
-    justify-content: center; /* Center the entire section */
+    flex-direction: column;
+    align-items: center; /* Center the entire section */
+    justify-content: center;
     padding: 50px 20px; /* Space around the section */
-    gap: 40px; /* Space between the image and text */
+    gap: 40px; /* Space between the title and content */
     background-color: #5c82a1;
     min-height: 100vh;
     font-family: 'Poppins', sans-serif;
   }
   
+  .sectionTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: row; /* Image and text side by side */
+    align-items: center;
+    gap: 40px;
+  }
+  
   .imageContainer {
-    flex-shrink: 0; /* Prevent the image from shrinking */
-    max-width: 200px; /* Limit the width of the image */
-    font-family: 'Poppins', sans-serif;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%; /* Make the container circular */
+    overflow: hidden; /* Ensure the image stays within the circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #336384; /* Add a white border around the circle */
   }
   
   .profileImage {
-    border-radius: 0%; /* Make the image circular */
-    object-fit: cover;
-    width: 100%; /* Fixed width */
-    height: 100%; /* Fixed height */
-    font-family: 'Poppins', sans-serif;
+    object-fit: cover; /* Ensure the image is zoomed in */
+    width: 100%; /* Full width within the container */
+    height: 100%; /* Full height within the container */
   }
   
   .textContainer {
     max-width: 600px; /* Limit the width of the text */
     text-align: left; /* Align text to the left */
     font-family: 'Poppins', sans-serif;
-  }  
+  }
   
   .aboutText {
     font-size: 1.2rem;
     line-height: 1.6;
-    color: #333;
-    margin-bottom: 10px; /* Space between sentences */
-    font-family: 'Poppins', sans-serif;
-  }
-
-  .iconsContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px; /* Space between icons */
-    margin-top: 20px; /* Space above the icons */
-    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    margin-bottom: 10px; /* Space between paragraphs */
   }
   
-  .icon {
-    font-size: 2rem; /* Size of the icons */
-    color: #0b3971; /* Default icon color */
-    transition: color 0.3s ease; /* Smooth color transition on hover */
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  .icon:hover {
-    color: #ffffff; /* Highlight color when hovered */
-    font-family: 'Poppins', sans-serif;
-  }
-  
-
   @media (max-width: 768px) {
-    .aboutSection {
+    .content {
       flex-direction: column; /* Stack image and text vertically */
       gap: 20px; /* Reduce space between the image and text */
-      font-family: 'Poppins', sans-serif;
     }
   
     .textContainer {
       text-align: center; /* Center text on smaller screens */
-      font-family: 'Poppins', sans-serif;
     }
   }
-  
   
