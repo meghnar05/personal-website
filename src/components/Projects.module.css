@@ -3,12 +3,14 @@
     text-align: center;
     background-color: #5c82a1; /* Section background color */
     color: white; /* White text for readability */
+    font-family: 'Poppins', sans-serif;
   }
   
   .sectionTitle {
     font-size: 2rem;
     margin-bottom: 40px;
     color: #ffffff;
+    font-family: 'Poppins', sans-serif;
   }
   
   .tileContainer {
@@ -16,6 +18,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ensure consistent tile width */
     gap: 20px;
     justify-items: center;
+    font-family: 'Poppins', sans-serif;
   }
   
   .tile {
@@ -32,15 +35,18 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Distribute content evenly */
+    font-family: 'Poppins', sans-serif;
   }
   
   .tile:hover {
     transform: scale(1.10);
     background-color: #0b3971;
+    font-family: 'Poppins', sans-serif;
   }
   
   .banner {
     margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
   }
   
   .projectLogo {
@@ -52,12 +58,14 @@
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
   }
   
   .projectDescription {
     font-size: 1rem;
     margin-bottom: 20px;
     color: white;
+    font-family: 'Poppins', sans-serif;
   }
   
   .links {
@@ -65,6 +73,7 @@
     justify-content: center;
     gap: 10px;
     margin-bottom: 10px; /* Ensure uniform spacing above skills section */
+    font-family: 'Poppins', sans-serif;
   }
   
   .link {
@@ -75,16 +84,19 @@
     padding: 5px 10px;
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
   }
   
   .link:hover {
     background-color: #5c82a1;
     color: white;
+    font-family: 'Poppins', sans-serif;
   }
   
   .skills {
     text-align: left; /* Align skills list to the left */
     margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
   }
   
   .skillsTitle {
@@ -92,17 +104,20 @@
     font-weight: bold;
     margin-bottom: 10px;
     text-align: center;
+    font-family: 'Poppins', sans-serif;
   }
   
   .skillsList {
     list-style: none;
     padding: 0;
     margin: 0;
+    font-family: 'Poppins', sans-serif;
   }
   
   .skillItem {
     font-size: 0.9rem;
     margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
   }
   
   .banner {
@@ -111,6 +126,7 @@
     justify-content: center; /* Center align the whole section */
     gap: 10px; /* Add spacing between the logo and the name */
     margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
   }
   
   .projectLogo {
@@ -124,6 +140,7 @@
     font-weight: bold;
     margin: 0; /* Remove extra margins for alignment */
     text-align: left; /* Align text to the left for better visual flow */
+    font-family: 'Poppins', sans-serif;
   }
 
   .skillsList {
@@ -134,14 +151,17 @@
     justify-content: center; /* Center align skills */
     flex-wrap: wrap; /* Allow wrapping for smaller screens */
     gap: 5px; /* Spacing between skills */
+    font-family: 'Poppins', sans-serif;
   }
   
   .skillItem {
     font-size: 0.9rem;
+    font-family: 'Poppins', sans-serif;
   }
   
   .skillItem:not(:last-child)::after {
     content: " | "; /* Add a pipe separator after each skill except the last */
     color: white; /* Match separator color with text color */
+    font-family: 'Poppins', sans-serif;
   }
   

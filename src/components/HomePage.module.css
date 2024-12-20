@@ -9,6 +9,7 @@
   padding: 50px 20px; /* Space around content */
   height: auto; /* Allow the container to grow dynamically with content */
   margin-top: -20px; /* Move the container up slightly */
+  font-family: 'Poppins', sans-serif;
 }
 
 .contentWrapper {
@@ -18,6 +19,7 @@
   text-align: center;
   gap: 20px; /* Space between the name and adjectives */
   margin-top: -50px; /* Move the content up */
+  font-family: 'Poppins', sans-serif;
 }
 
 
@@ -25,6 +27,7 @@
   display: flex;
   flex-direction: column; /* Stack title and adjectives vertically */
   gap: 10px; /* Space between title and adjectives */
+  font-family: 'Poppins', sans-serif;
 }
 
 .title {
@@ -33,11 +36,13 @@
   color: black; /* Make your name black */
   font-weight: bold;
   text-align: center; /* Center-align the text */
+  font-family: 'Poppins', sans-serif;
 }
 
 .rotatingWords {
   font-size: 1.8rem; /* Adjust size as needed for the adjectives */
   color: #000000; /* Default text color */
+  font-family: 'Poppins', sans-serif;
 }
 
 .fadeWord {
@@ -47,6 +52,7 @@
   -webkit-background-clip: text;
   color: transparent; /* Make text transparent to show the gradient */
   display: inline-block; /* Ensure proper rendering of gradient */
+  font-family: 'Poppins', sans-serif;
 }
 
 
@@ -56,4 +62,5 @@
   height: 1.5rem;
   background-color: #5c82a1;
   margin-left: 2px;
+  font-family: 'Poppins', sans-serif;
 }

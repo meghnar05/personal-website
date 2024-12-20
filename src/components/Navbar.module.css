@@ -4,6 +4,7 @@
   align-items: center;
   padding: 10px 20px;
   background-color: #5c82a1;
+  font-family: 'Poppins', sans-serif;
 }
 
 .logo img {
@@ -14,12 +15,14 @@
   list-style: none;
   display: flex;
   gap: 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .navLinks li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  font-family: 'Poppins', sans-serif;
   position: relative; /* Needed for positioning the line */
 }
 
@@ -32,12 +35,15 @@
   height: 2px;
   background-color: #052845; /* Underline color */
   transition: width 0.3s ease; /* Smooth animation */
+  font-family: 'Poppins', sans-serif;
 }
 
 .navLinks li a:hover {
   color: #052845; /* Change text color on hover */
+  font-family: 'Poppins', sans-serif;
 }
 
 .navLinks li a:hover::after {
   width: 100%; /* Expand the underline on hover */
+  font-family: 'Poppins', sans-serif;
 }
