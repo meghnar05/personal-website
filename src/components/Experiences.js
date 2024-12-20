@@ -1,7 +1,7 @@
-import React from 'react';
-import Image from 'next/image';
-import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa'; // Icons for calendar and location
-import styles from './Experiences.module.css';
+import React, { useRef, useEffect } from "react";
+import Image from "next/image";
+import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa"; // Icons for calendar and location
+import styles from "./Experiences.module.css";
 
 const experiences = [
   {
@@ -34,45 +34,70 @@ const experiences = [
 ];
 
 const Experiences = () => {
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(styles.visible); // Add visible class
+        }
+      },
+      { threshold: 0.2 } // Trigger when 20% of the content is visible
+    );
+
+    if (contentRef.current) {
+      observer.observe(contentRef.current);
+    }
+
+    return () => {
+      if (contentRef.current) {
+        observer.unobserve(contentRef.current);
+      }
+    };
+  }, []);
+
   return (
     <section className={styles.experiencesSection}>
-      <h2 className={styles.sectionTitle}>Experiences</h2>
-      <div className={styles.tileContainer}>
-        {experiences.map((experience) => (
-          <div key={experience.id} className={styles.tile}>
-            <div className={styles.tileInner}>
-              {/* Front of the Tile */}
-              <div className={styles.tileFront}>
-                <div className={styles.companyHeader}>
-                  <Image
-                    src={experience.logo}
-                    alt={`${experience.company} Logo`}
-                    width={40}
-                    height={40}
-                    className={styles.companyLogo}
-                  />
-                  <h3 className={styles.companyName}>{experience.company}</h3>
-                </div>
-                <p className={styles.position}>{experience.position}</p>
-                <div className={styles.details}>
-                  <div className={styles.detailItem}>
-                    <FaCalendarAlt className={styles.icon} />
-                    <span>{experience.period}</span>
+      <div ref={contentRef} className={styles.contentWrapper}>
+        <h2 className={styles.sectionTitle}>Experiences</h2>
+        <div className={styles.tileContainer}>
+          {experiences.map((experience) => (
+            <div key={experience.id} className={styles.tile}>
+              <div className={styles.tileInner}>
+                {/* Front of the Tile */}
+                <div className={styles.tileFront}>
+                  <div className={styles.companyHeader}>
+                    <Image
+                      src={experience.logo}
+                      alt={`${experience.company} Logo`}
+                      width={40}
+                      height={40}
+                      className={styles.companyLogo}
+                    />
+                    <h3 className={styles.companyName}>{experience.company}</h3>
                   </div>
-                  <div className={styles.detailItem}>
-                    <FaMapMarkerAlt className={styles.icon} />
-                    <span>{experience.location}</span>
+                  <p className={styles.position}>{experience.position}</p>
+                  <div className={styles.details}>
+                    <div className={styles.detailItem}>
+                      <FaCalendarAlt className={styles.icon} />
+                      <span>{experience.period}</span>
+                    </div>
+                    <div className={styles.detailItem}>
+                      <FaMapMarkerAlt className={styles.icon} />
+                      <span>{experience.location}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Back of the Tile */}
-              <div className={styles.tileBack}>
-                <p className={styles.description}>{experience.description}</p>
+                {/* Back of the Tile */}
+                <div className={styles.tileBack}>
+                  <p className={styles.description}>{experience.description}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

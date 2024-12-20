@@ -1,6 +1,6 @@
-import React from 'react';
-import Image from 'next/image';
-import styles from './Projects.module.css';
+import React, { useRef, useEffect } from "react";
+import Image from "next/image";
+import styles from "./Projects.module.css";
 
 const projects = [
   {
@@ -46,57 +46,94 @@ const projects = [
 ];
 
 const Projects = () => {
-    return (
-      <section className={styles.projectsSection}>
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(styles.visible); // Add visible class
+        }
+      },
+      { threshold: 0.2 } // Trigger when 20% of the content is visible
+    );
+
+    if (contentRef.current) {
+      observer.observe(contentRef.current);
+    }
+
+    return () => {
+      if (contentRef.current) {
+        observer.unobserve(contentRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <section className={styles.projectsSection}>
+      <div ref={contentRef} className={styles.contentWrapper}>
         <h2 className={styles.sectionTitle}>Projects</h2>
         <div className={styles.tileContainer}>
           {projects.map((project) => (
             <div key={project.id} className={styles.tile}>
               <div className={styles.banner}>
                 <Image
-                    src={project.logo}
-                    alt={`${project.name} Logo`}
-                    className={styles.projectLogo}
-                    width={50}
-                    height={50}
+                  src={project.logo}
+                  alt={`${project.name} Logo`}
+                  className={styles.projectLogo}
+                  width={50}
+                  height={50}
                 />
                 <h3 className={styles.projectName}>{project.name}</h3>
-                </div>
-
-              {/* <h3 className={styles.projectName}>{project.name}</h3> */}
+              </div>
               <p className={styles.projectDescription}>{project.description}</p>
               <div className={styles.links}>
                 {project.github && (
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.link}
+                  >
                     GitHub
                   </a>
                 )}
                 {project.website && (
-                  <a href={project.website} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                  <a
+                    href={project.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.link}
+                  >
                     Website
                   </a>
                 )}
                 {project.demo && (
-                  <a href={project.demo} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.link}
+                  >
                     Demo
                   </a>
                 )}
               </div>
               <div className={styles.skills}>
-                {/* <h4 className={styles.skillsTitle}>Skills:</h4> */}
                 <ul className={styles.skillsList}>
-                    {project.skills.map((skill, index) => (
+                  {project.skills.map((skill, index) => (
                     <li key={index} className={styles.skillItem}>
-                        {skill}
+                      {skill}
                     </li>
-                    ))}
+                  ))}
                 </ul>
-            </div>
+              </div>
             </div>
           ))}
         </div>
-      </section>
-    );
-  };
-  
-  export default Projects;
+      </div>
+    </section>
+  );
+};
+
+export default Projects;

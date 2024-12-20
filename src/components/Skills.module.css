@@ -1,14 +1,27 @@
 .skillsSection {
+    position: relative; /* Allow positioning for child elements */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 50px 20px;
     gap: 40px; /* Space between the title and tiles */
-    background-color: #336384;
+    background-color: #336384; /* Constant background color */
     color: white;
     font-family: 'Poppins', sans-serif;
-    min-height: 100vh;
+    min-height: 100vh; /* Full-screen height */
+    overflow: hidden; /* Prevent content overflow */
+  }
+  
+  .contentWrapper {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(30px); /* Start slightly below */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth fade-in and upward movement */
+  }
+  
+  .contentWrapper.visible {
+    opacity: 1;
+    transform: translateY(0); /* Move to the original position */
   }
   
   .sectionTitle {
@@ -21,9 +34,9 @@
   
   .tileContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ensure consistent tile width */
-    gap: 40px; /* Space between tiles */
-    justify-items: center;
+    grid-template-columns: repeat(3, 1fr); /* Exactly 3 tiles in a row */
+    gap: 80px; /* Space between tiles */
+    justify-items: center; /* Center align tiles within their grid cells */
     width: 100%;
   }
   
