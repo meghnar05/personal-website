@@ -1,0 +1,90 @@
+.skillsSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    gap: 40px; /* Space between the title and tiles */
+    background-color: #336384;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .tileContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ensure consistent tile width */
+    gap: 40px; /* Space between tiles */
+    justify-items: center;
+    width: 100%;
+  }
+  
+  .tile {
+    width: 350px;
+    height: 550px; /* Increased height for longer content */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #5c82a1;
+    color: white;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Start content from the top */
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .tile:hover {
+    transform: scale(1.10);
+    background-color: #5c82a1;
+  }
+  
+  .tileTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .iconsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ensure 3 columns for alignment */
+    gap: 25px; /* Space between rows and columns */
+    justify-items: center; /* Center align icons and labels within their cells */
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .iconWrapper {
+    display: flex;
+    flex-direction: column; /* Stack icon and label vertically */
+    align-items: center;
+    text-align: center;
+  }
+  
+  .icon {
+    font-size: 3rem; /* Larger icon size */
+    color: white;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .icon:hover {
+    color: #336384; /* Highlight color on hover */
+    transform: scale(1.2);
+  }
+  
+  .iconLabel {
+    font-size: 1rem; /* Adjust font size for labels */
+    color: white;
+  }
+  

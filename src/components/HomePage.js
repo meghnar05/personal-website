@@ -73,6 +73,7 @@ const HomePage = () => {
           <a href="#about">About</a>
           <a href="#experience">Experiences</a>
           <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
         </div>
       </div>
 
