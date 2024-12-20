@@ -4,50 +4,57 @@ import styles from './HomePage.module.css';
 const HomePage = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
-  const [typing, setTyping] = useState(true); // Determines if typing or erasing
+  const [typing, setTyping] = useState(true);
 
-  const rotatingWords = ["Software Engineer", "Designer", "Michigan Wolverine", "Pianist", "Problem Solver", "Builder", "Taekwondo Black Belt", "Entrepreneur", "Competitive Athlete"];
+  const rotatingWords = [
+    "Software Engineer",
+    "Designer",
+    "Michigan Wolverine",
+    "Pianist",
+    "Problem Solver",
+    "Builder",
+    "Taekwondo Black Belt",
+    "Entrepreneur",
+    "Competitive Athlete",
+  ];
 
   useEffect(() => {
     let typingInterval;
 
     if (typing) {
-      // Typing the word
       typingInterval = setInterval(() => {
         setDisplayedText((prev) => {
           const currentWord = rotatingWords[currentWordIndex];
           if (prev.length < currentWord.length) {
-            return currentWord.slice(0, prev.length + 1); // Add next character
+            return currentWord.slice(0, prev.length + 1);
           } else {
             clearInterval(typingInterval);
-            setTimeout(() => setTyping(false), 1500); // Pause for 2 seconds after typing the word
+            setTimeout(() => setTyping(false), 1500);
             return prev;
           }
         });
-      }, 100); // Typing speed
+      }, 100);
     } else {
-      // Erasing the word
       typingInterval = setInterval(() => {
         setDisplayedText((prev) => {
           if (prev.length > 0) {
-            return prev.slice(0, -1); // Remove last character
+            return prev.slice(0, -1);
           } else {
             clearInterval(typingInterval);
-            setTyping(true); // Start typing the next word
-            setCurrentWordIndex((prevIndex) => (prevIndex + 1) % rotatingWords.length); // Move to next word
+            setTyping(true);
+            setCurrentWordIndex((prevIndex) => (prevIndex + 1) % rotatingWords.length);
             return "";
           }
         });
-      }, 50); // Erasing speed
+      }, 50);
     }
 
     return () => clearInterval(typingInterval);
-  }, [typing, currentWordIndex, rotatingWords]);
+  }, [typing, currentWordIndex]);
 
   return (
     <div className={styles.aboutContainer}>
       <div className={styles.contentWrapper}>
-        {/* Text Section */}
         <div className={styles.textContainer}>
           <h1 className={styles.title}>Meghna Reddy</h1>
           <h2 className={styles.rotatingWords}>
