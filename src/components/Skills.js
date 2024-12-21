@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./Skills.module.css";
+import { FaArrowUp } from "react-icons/fa"; // Import the up arrow icon
 import {
   FaReact,
   FaNodeJs,
@@ -31,15 +32,26 @@ import { VscVscode } from "react-icons/vsc";
 const Skills = () => {
   const contentRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  const scrollToTop = () => {
+    const homeElement = document.getElementById("home");
+    if (homeElement) {
+      homeElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          setShowBackToTop(true);
+        } else {
+          setShowBackToTop(false);
         }
       },
-      { threshold: 0.1 } // Trigger when 10% of the content is visible
+      { threshold: 1.0 } // Trigger when 10% of the Skills section is visible
     );
 
     if (contentRef.current) {
@@ -169,6 +181,14 @@ const Skills = () => {
           </div>
         </div>
       </div>
+
+      {/* Back to Top Button */}
+      {showBackToTop && (
+        <div className={styles.backToTop} onClick={scrollToTop}>
+          <FaArrowUp className={styles.upArrow} />
+          <span>Back to Top</span>
+        </div>
+      )}
     </section>
   );
 };
