@@ -113,14 +113,14 @@ const HomePage = () => {
           >
             <FaEnvelope />
           </a>
-          <a
+          {/* <a
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.icon}
           >
             <FaFileAlt />
-          </a>
+          </a> */}
         </div>
       </div>
     </div>
