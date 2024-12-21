@@ -13,6 +13,7 @@
   overflow: hidden; /* Prevent content from overflowing */
 }
 
+
 .contentWrapper {
   opacity: 0; /* Initially hidden */
   transform: translateY(20px); /* Start slightly below */
@@ -35,11 +36,19 @@
 
 .tileContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ensure consistent tile width */
+  grid-template-columns: repeat(4, 1fr); /* Always 4 tiles per row for larger screens */
   gap: 60px; /* Space between tiles */
   justify-items: center; /* Center tiles within their grid cells */
   font-family: 'Poppins', sans-serif;
-  grid-template-columns: repeat(4, 1fr); /* Always 4 tiles per row */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .tileContainer {
+    grid-template-columns: 1fr; /* Stack tiles vertically for smaller screens */
+    gap: 20px; /* Adjust spacing between tiles */
+    padding: 0 20px; /* Reduce horizontal padding */
+  }
 }
 
 .tile {

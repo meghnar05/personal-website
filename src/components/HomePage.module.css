@@ -29,13 +29,13 @@
 
 .navbar {
   position: absolute;
-  top: 20px; /* Position the navbar at the top */
+  top: 20px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px; /* Add some padding for spacing */
-  z-index: 10; /* Ensure it stays above the beams */
+  padding: 0 20px;
+  z-index: 10;
 }
 
 .navLogo {
@@ -75,7 +75,33 @@
   width: 100%; /* Full width on hover */
 }
 
+.hamburger {
+  display: none; /* Display on mobile only */
+  font-size: 1.5rem;
+  color: #5c82a1;
+  cursor: pointer;
+  margin-left: auto; /* Push the hamburger to the far right */
+  margin-top: -60px;
+}
 
+
+.navLinks.open {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #0c0c0c;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.navLinks.open a {
+  color: #5c82a1;
+  padding: 10px 0;
+  text-align: center;
+}
 
 .contentWrapper {
   position: relative;
@@ -148,4 +174,68 @@
 
 .icon:hover {
   color: #0b3971; /* Change color on hover */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack navbar elements vertically */
+    align-items: flex-start; /* Align to the left */
+    gap: 10px; /* Add gap between logo and links */
+  }
+
+  .navLogo {
+    height: 80px; /* Reduce logo size */
+  }
+
+  .navLinks {
+    display: none; /* Hide the regular nav links for mobile */
+  }
+
+  .navLinks.open {
+    display: flex; /* Show nav links when menu is open */
+  }
+
+  .navLinks a {
+    color: #5c82a1;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #5c82a1;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(7px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-7px);
+  }
+
+  .title {
+    font-size: 4rem; /* Reduce font size for mobile */
+  }
+
+  .rotatingWords {
+    font-size: 1.5rem; /* Adjust font size for rotating words */
+  }
+
+  .iconWrapper {
+    gap: 15px; /* Reduce spacing between icons */
+  }
+
+  .icon {
+    font-size: 2.5rem; /* Reduce icon size for mobile */
+  }
 }

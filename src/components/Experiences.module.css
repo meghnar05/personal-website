@@ -32,7 +32,7 @@
 
 .tileContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Always 3 tiles per row */
+  grid-template-columns: repeat(3, 1fr); /* Always 3 tiles per row for larger screens */
   gap: 80px; /* Increased space between tiles */
   justify-items: center; /* Center tiles in their grid cells */
   justify-content: center; /* Center the grid itself */
@@ -122,4 +122,13 @@
 .icon {
   font-size: 1.2rem;
   color: white;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .tileContainer {
+    grid-template-columns: 1fr; /* Stack tiles vertically */
+    gap: 20px; /* Adjust spacing between tiles for smaller screens */
+    padding: 0 20px; /* Reduce horizontal padding */
+  }
 }

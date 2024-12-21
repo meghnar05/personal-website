@@ -51,7 +51,7 @@ const Skills = () => {
           setShowBackToTop(false);
         }
       },
-      { threshold: 1.0 } // Trigger when 10% of the Skills section is visible
+      { threshold: 0.1 } // Trigger when 10% of the Skills section is visible
     );
 
     if (contentRef.current) {

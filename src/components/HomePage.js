@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import styles from "./HomePage.module.css";
-import { FaLinkedin, FaGithub, FaEnvelope, FaFileAlt } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope, FaBars, FaTimes } from "react-icons/fa";
 
 const HomePage = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [typing, setTyping] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false); // State for the hamburger menu
 
   const rotatingWords = [
     "Software Engineer",
+    "Taekwondo Black Belt",
     "Designer",
     "Michigan Wolverine",
     "Pianist",
     "Problem Solver",
     "Builder",
-    "Taekwondo Black Belt",
     "Entrepreneur",
     "Competitive Athlete",
   ];
@@ -69,11 +70,17 @@ const HomePage = () => {
       {/* Navbar */}
       <div className={styles.navbar}>
         <img src="/assets/navLogo.png" alt="Logo" className={styles.navLogo} />
-        <div className={styles.navLinks}>
-          <a href="#about">About</a>
-          <a href="#experience">Experiences</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
+        <div className={`${styles.navLinks} ${menuOpen ? styles.open : ""}`}>
+          <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+          <a href="#experience" onClick={() => setMenuOpen(false)}>Experiences</a>
+          <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
+          <a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a>
+        </div>
+        <div
+          className={styles.hamburger}
+          onClick={() => setMenuOpen((prevState) => !prevState)}
+        >
+          {menuOpen ? <FaTimes /> : <FaBars />}
         </div>
       </div>
 
@@ -113,14 +120,6 @@ const HomePage = () => {
           >
             <FaEnvelope />
           </a>
-          {/* <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.icon}
-          >
-            <FaFileAlt />
-          </a> */}
         </div>
       </div>
     </div>
